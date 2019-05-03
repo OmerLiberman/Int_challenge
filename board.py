@@ -1,15 +1,15 @@
 X_COORD = 0
 Y_COORD = 1
 
-FREE_SEAT_SIGN = '-'
-BOX_SIGN = 'B'
-HUNTER_SIGN = 'H'
-
 
 class Board:
     """
     This class describes the game board.
     """
+
+    FREE_SEAT_SIGN = '-'
+    BOX_SIGN = 'B'
+    HUNTER_SIGN = 'H'
 
     def __init__(self, n, b, h, n_is_even=True):
         """
@@ -22,7 +22,7 @@ class Board:
         self.N = n
         self.B = b
         self.H = h
-        self.board = [[FREE_SEAT_SIGN for x in range(self.N)] for y in range(self.N)]
+        self.board = [[self.FREE_SEAT_SIGN for x in range(self.N)] for y in range(self.N)]
         self.is_N_even = n_is_even
 
         self.hunters_left_halve, self.hunters_right_halve = 0, 0
@@ -44,11 +44,11 @@ class Board:
         :return: nothing.
         """
         for box in array_of_boxes_placed_coords:
-            self.board[box[X_COORD] - 1][box[Y_COORD] - 1] = BOX_SIGN
+            self.board[box[X_COORD] - 1][box[Y_COORD] - 1] = self.BOX_SIGN
             self.hunters_boxes_free_seats_counter_by_side(box)
 
         for hunter in array_of_hunters_placed_coords:
-            self.board[hunter[X_COORD] - 1][hunter[Y_COORD] - 1] = HUNTER_SIGN
+            self.board[hunter[X_COORD] - 1][hunter[Y_COORD] - 1] = self.HUNTER_SIGN
             self.hunters_boxes_free_seats_counter_by_side(hunter)
 
         self.update_free_seats_by_side_counter()
@@ -62,7 +62,7 @@ class Board:
         :return: nothing.
         """
         x_value, y_value = coords[X_COORD] - 1, coords[Y_COORD] - 1
-        if self.board[x_value][y_value] == HUNTER_SIGN:
+        if self.board[x_value][y_value] == self.HUNTER_SIGN:
             if self._is_coord_in_left_halve(x_value, y_value):
                 self.hunters_left_halve += 1
             else:
