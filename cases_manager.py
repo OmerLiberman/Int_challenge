@@ -31,4 +31,4 @@ class CasesManager:
 
     def _print_out_cases_solves(self, solves):
         for solve_number in range(len(solves)):
-            print("Case #" + str(solve_number) + ": " + str(solves[solve_number]))
+            print("Case #" + str(solve_number + 1) + ": " + str(solves[solve_number]))

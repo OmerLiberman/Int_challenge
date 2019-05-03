@@ -11,7 +11,7 @@ class Board:
     BOX_SIGN = 'B'
     HUNTER_SIGN = 'H'
 
-    def __init__(self, n, b, h, n_is_even=True):
+    def __init__(self, n, b, h, n_is_even):
         """
         Init method
         :param n: board size.
@@ -22,74 +22,48 @@ class Board:
         self.N = n
         self.B = b
         self.H = h
-        self.board = [[self.FREE_SEAT_SIGN for x in range(self.N)] for y in range(self.N)]
         self.is_N_even = n_is_even
+        self.boxes_by_parts, self.hunters_by_part = [], []
 
-        self.hunters_left_halve, self.hunters_right_halve = 0, 0
-        self.boxes_left_halve, self.boxes_right_halve = 0, 0
-        self.free_seats_left_halve, self.free_seats_right_halve = 0, 0
-
-        self.hunters_up_halve, self.hunters_down_halve = 0, 0
-        self.boxes_up_halve, self.boxes_down_halve = 0, 0
-        self.free_seats_up_halve, self.free_seats_down_halve = 0, 0
-
-    def place_boxes_and_hunters(self, array_of_boxes_placed_coords, array_of_hunters_placed_coords):
+    def split_boxes_hunters_when_size_is_even(self, array_of_boxes_placed_coords, array_of_hunters_placed_coords):
         """
+        A B
+        D C
         :param array_of_boxes_placed_coords:
-                array of tuples of coordinates (x,y) which indicate where the boxes are
-                placed on the board.
         :param array_of_hunters_placed_coords:
-                array of tuples of coordinates (x,y) which indicate where the hunters are
-                placed on the board.
-        :return: nothing.
+        :return:
         """
+        boxes_a, hunters_a = [], []
+        boxes_b, hunters_b = [], []
+        boxes_c, hunters_c = [], []
+        boxes_d, hunters_d = [], []
+
         for box in array_of_boxes_placed_coords:
-            self.board[box[X_COORD] - 1][box[Y_COORD] - 1] = self.BOX_SIGN
-            self.hunters_boxes_free_seats_counter_by_side(box)
+            if self._is_coord_in_left_halve(box[X_COORD], box[Y_COORD]):
+                if self._is_coord_in_up_halve(box[X_COORD], box[Y_COORD]):
+                    boxes_a.append(box)
+                else:  # left - down (D)
+                    boxes_d.append(box)
+            else:  # right halve
+                if self._is_coord_in_up_halve(box[X_COORD], box[Y_COORD]):
+                    boxes_b.append(box)
+                else:  # right - down (C)
+                    boxes_c.append(box)
 
         for hunter in array_of_hunters_placed_coords:
-            self.board[hunter[X_COORD] - 1][hunter[Y_COORD] - 1] = self.HUNTER_SIGN
-            self.hunters_boxes_free_seats_counter_by_side(hunter)
+            if self._is_coord_in_left_halve(hunter[X_COORD], hunter[Y_COORD]):
+                if self._is_coord_in_up_halve(hunter[X_COORD], hunter[Y_COORD]):
+                    hunters_a.append(hunter)
+                else:  # left - down (D)
+                    hunters_d.append(hunter)
+            else:  # right halve
+                if self._is_coord_in_up_halve(hunter[X_COORD], hunter[Y_COORD]):
+                    hunters_b.append(hunter)
+                else:  # right - down (C)
+                    hunters_c.append(hunter)
 
-        self.update_free_seats_by_side_counter()
-
-    def hunters_boxes_free_seats_counter_by_side(self, coords):
-        """
-        Complicated name for simple method.
-        The goal is to count how many free places and hunters there are in each halve:
-        left halve, right halve, up halve, down halve.
-        :param coords : tuple (x,y)
-        :return: nothing.
-        """
-        x_value, y_value = coords[X_COORD] - 1, coords[Y_COORD] - 1
-        if self.board[x_value][y_value] == self.HUNTER_SIGN:
-            if self._is_coord_in_left_halve(x_value, y_value):
-                self.hunters_left_halve += 1
-            else:
-                self.hunters_right_halve += 1
-
-            if self._is_coord_in_up_halve(x_value, y_value):
-                self.hunters_up_halve += 1
-            else:
-                self.hunters_down_halve += 1
-
-        else:  # self.board[x_value][y_value] == BOX_SIGN
-            if self._is_coord_in_left_halve(x_value, y_value):
-                self.boxes_left_halve += 1
-            else:
-                self.boxes_right_halve += 1
-
-            if self._is_coord_in_up_halve(x_value, y_value):
-                self.boxes_up_halve += 1
-            else:
-                self.boxes_down_halve += 1
-
-    def update_free_seats_by_side_counter(self):
-        each_side_size = (self.N * self.N) / 2
-        self.free_seats_left_halve = each_side_size - self.hunters_left_halve - self.boxes_left_halve
-        self.free_seats_right_halve = each_side_size - self.hunters_right_halve - self.boxes_right_halve
-        self.free_seats_up_halve = each_side_size - self.hunters_up_halve - self.boxes_up_halve
-        self.free_seats_down_halve = each_side_size - self.hunters_down_halve - self.boxes_down_halve
+        self.boxes_by_parts = [boxes_a, boxes_b, boxes_c, boxes_d]
+        self.hunters_by_part = [hunters_a, hunters_b, hunters_c, hunters_d]
 
     def _is_coord_in_left_halve(self, x, y):
         return x - 1 < self.N / 2
