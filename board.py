@@ -1,15 +1,33 @@
-X_COORD = 0
-Y_COORD = 1
-
-
+# ----- CLASS ----- #
 class Board:
     """
     This class describes the game board.
+    It holds array which indicates how many boxes and hunters are in each part
+    of the board.
+    "part of the board means" :
+
+    when N is even :
+    A B
+    D C
+    each of them represents a quarter on the board.
+
+    when N is odd :
+    A E B
+    H I F
+    D G C
+    such that:
+    A, B, C, D are four equal size squares with edges of (N-1)/2
+    H, F have a shape of 1 * (N-1)/2
+    E, G have a shape of (N-1)/2 * 1
+    I is 1 * 1 (single seat) in the middle
     """
 
     FREE_SEAT_SIGN = '-'
     BOX_SIGN = 'B'
     HUNTER_SIGN = 'H'
+
+    X_COORD = 0
+    Y_COORD = 1
 
     def __init__(self, n, b, h, n_is_even):
         """
@@ -70,7 +88,7 @@ class Board:
         :param coords:
         :return:
         """
-        x, y = coords[X_COORD], coords[Y_COORD]
+        x, y = coords[self.X_COORD], coords[self.Y_COORD]
         mid = self.N / 2
         if y <= mid:
             if x <= mid:
@@ -153,7 +171,7 @@ class Board:
         :param coords:
         :return:
         """
-        x, y = coords[X_COORD], coords[Y_COORD]
+        x, y = coords[self.X_COORD], coords[self.Y_COORD]
         mid = (self.N + 1) / 2
         if y < mid:
             if x < mid:

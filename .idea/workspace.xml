@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd83d0ff-9977-4d11-8235-fc8fa777b58d" name="Default Changelist" comment="implemented to algorithm which solves even size boards">
+      <change afterPath="$PROJECT_DIR$/files_to_try/all" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solutions/solutions_task_2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/board.py" beforeDir="false" afterPath="$PROJECT_DIR$/board.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/case.py" beforeDir="false" afterPath="$PROJECT_DIR$/case.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cases_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/cases_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files_to_try/checking.txt" beforeDir="false" afterPath="$PROJECT_DIR$/files_to_try/checking.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/intuit_drill$input_analyzer.coverage" NAME="input_analyzer Coverage Results" MODIFIED="1556966621687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/intuit_drill$input_analyzer.coverage" NAME="input_analyzer Coverage Results" MODIFIED="1556973720954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-454739647">
@@ -29,27 +33,33 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="76" />
+          <entry key="all" value="2" />
           <entry key="dummy" value="83" />
-          <entry key="py" value="9892" />
-          <entry key="txt" value="87" />
+          <entry key="py" value="11337" />
+          <entry key="solutions_task_1" value="24" />
+          <entry key="solutions_task_2" value="26" />
+          <entry key="txt" value="88" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="170" />
-          <entry key="Python" value="9968" />
+          <entry key="PLAIN_TEXT" value="223" />
+          <entry key="Python" value="11413" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="16" />
-          <entry key="txt" value="14" />
+          <entry key="all" value="1" />
+          <entry key="py" value="19" />
+          <entry key="solutions_task_1" value="1" />
+          <entry key="solutions_task_2" value="1" />
+          <entry key="txt" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Python" value="16" />
+          <entry key="PLAIN_TEXT" value="22" />
+          <entry key="Python" value="19" />
         </counts>
       </usages-collector>
     </session>
@@ -59,31 +69,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="85">
+              <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
-                <marker date="1556880881711" expanded="true" signature="278:364" ph="..." />
-                <marker date="1556880881711" expanded="true" signature="399:820" ph="..." />
+                <element signature="e#189#477#0" />
+                <element signature="e#516#674#0" />
+                <element signature="e#516#591#1" />
+                <element signature="e#717#1264#0" />
+                <element signature="e#717#847#1" />
+                <element signature="e#1283#1451#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/files_to_try/checking.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/files_to_try/task-1.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="29" selection-start-line="29" selection-end-line="32" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -91,26 +86,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cases_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="51">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
               <folding>
-                <marker date="1556965839206" expanded="true" signature="43:48" ph="..." />
-                <marker date="1556965839206" expanded="true" signature="1004:1013" ph="..." />
+                <marker date="1556973710633" expanded="true" signature="245:251" ph="..." />
+                <marker date="1556973710633" expanded="true" signature="1562:1571" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/case.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="53" column="82" lean-forward="true" selection-start-line="53" selection-start-column="82" selection-end-line="53" selection-end-column="82" />
+            <state relative-caret-position="102">
+              <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
               <folding>
-                <element signature="e#381#513#0" />
-                <marker date="1556966287654" expanded="true" signature="85:86" ph="..." />
-                <marker date="1556966287654" expanded="true" signature="510:657" ph="..." />
-                <marker date="1556966287654" expanded="true" signature="1414:1420" ph="..." />
+                <marker date="1556968578190" expanded="true" signature="261:262" ph="..." />
+                <marker date="1556968578190" expanded="true" signature="686:833" ph="..." />
+                <marker date="1556968578190" expanded="true" signature="1770:1776" ph="..." />
               </folding>
             </state>
           </provider>
@@ -119,11 +113,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/board.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="63" column="55" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="55" />
+            <state relative-caret-position="136">
+              <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
               <folding>
-                <marker date="1556965331192" expanded="true" signature="38:39" ph="..." />
-                <marker date="1556965331192" expanded="true" signature="693:2095" ph="..." />
+                <marker date="1556973710617" expanded="true" signature="34:35" ph="..." />
+                <marker date="1556973710617" expanded="true" signature="1189:2591" ph="..." />
               </folding>
             </state>
           </provider>
@@ -138,6 +132,14 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>100</find>
+      <find>100 4 0</find>
+      <find>100000</find>
+      <find>X_COORD</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -148,10 +150,14 @@
         <option value="$PROJECT_DIR$/input_data.py" />
         <option value="$PROJECT_DIR$/input_analyzer.py" />
         <option value="$PROJECT_DIR$/cases_dealer.py" />
-        <option value="$PROJECT_DIR$/board.py" />
-        <option value="$PROJECT_DIR$/cases_manager.py" />
+        <option value="$PROJECT_DIR$/files_to_try/all" />
+        <option value="$PROJECT_DIR$/solutions/solutions_task_1" />
+        <option value="$PROJECT_DIR$/solutions/solutions_task_2" />
         <option value="$PROJECT_DIR$/case.py" />
+        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/files_to_try/checking.txt" />
+        <option value="$PROJECT_DIR$/cases_manager.py" />
+        <option value="$PROJECT_DIR$/board.py" />
       </list>
     </option>
   </component>
@@ -224,7 +230,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="C:\Users\Omer Liberman\Desktop\intuit_drill\files_to_try\checking.txt" />
+      <option name="PARAMETERS" value="C:\Users\Omer Liberman\Desktop\intuit_drill\files_to_try\task-1.txt" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -261,15 +267,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10590015" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.38297874" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.37806875" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22913256" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3878887" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -286,13 +291,13 @@
       <window_info anchor="right" id="Database" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10590015" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40752864" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.37806875" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -301,7 +306,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3289689" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -319,22 +324,6 @@
     <MESSAGE value="implemented to algorithm which solves even size boards" />
     <option name="LAST_COMMIT_MESSAGE" value="implemented to algorithm which solves even size boards" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/case.py</url>
-          <line>23</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/case.py</url>
-          <line>114</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../Singular drill/drill/analyze.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -344,71 +333,94 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/task-1.txt" />
-    <entry file="file://$PROJECT_DIR$/files_to_try/task-2.txt">
+    <entry file="file://$PROJECT_DIR$/files_to_try/all">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="273">
+          <caret line="94413" column="3" selection-start-line="94413" selection-start-column="3" selection-end-line="94413" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/board.py">
+    <entry file="file://$PROJECT_DIR$/solutions/solutions_task_1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="63" column="55" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="55" />
-          <folding>
-            <marker date="1556965331192" expanded="true" signature="38:39" ph="..." />
-            <marker date="1556965331192" expanded="true" signature="693:2095" ph="..." />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/solutions/solutions_task_2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1351">
+          <caret line="2" column="11" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files_to_try/task-2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="3821" column="3" lean-forward="true" selection-start-line="3821" selection-start-column="3" selection-end-line="3821" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files_to_try/checking.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files_to_try/task-1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11287">
+          <caret line="5973" selection-start-line="5973" selection-end-line="5974" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="85">
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <marker date="1556880881711" expanded="true" signature="278:364" ph="..." />
-            <marker date="1556880881711" expanded="true" signature="399:820" ph="..." />
+            <element signature="e#189#477#0" />
+            <element signature="e#516#674#0" />
+            <element signature="e#516#591#1" />
+            <element signature="e#717#1264#0" />
+            <element signature="e#717#847#1" />
+            <element signature="e#1283#1451#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/board.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding>
+            <marker date="1556973710617" expanded="true" signature="34:35" ph="..." />
+            <marker date="1556973710617" expanded="true" signature="1189:2591" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cases_manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
           <folding>
-            <marker date="1556965839206" expanded="true" signature="43:48" ph="..." />
-            <marker date="1556965839206" expanded="true" signature="1004:1013" ph="..." />
+            <marker date="1556973710633" expanded="true" signature="245:251" ph="..." />
+            <marker date="1556973710633" expanded="true" signature="1562:1571" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="53" column="82" lean-forward="true" selection-start-line="53" selection-start-column="82" selection-end-line="53" selection-end-column="82" />
+        <state relative-caret-position="102">
+          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
           <folding>
-            <element signature="e#381#513#0" />
-            <marker date="1556966287654" expanded="true" signature="85:86" ph="..." />
-            <marker date="1556966287654" expanded="true" signature="510:657" ph="..." />
-            <marker date="1556966287654" expanded="true" signature="1414:1420" ph="..." />
+            <marker date="1556968578190" expanded="true" signature="261:262" ph="..." />
+            <marker date="1556968578190" expanded="true" signature="686:833" ph="..." />
+            <marker date="1556968578190" expanded="true" signature="1770:1776" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files_to_try/task-1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="29" selection-start-line="29" selection-end-line="32" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files_to_try/checking.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
         </state>
       </provider>
     </entry>

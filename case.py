@@ -1,10 +1,16 @@
+# ----- IMPORTS ----- #
 from board import Board
 
 
-# from sympy.solvers import solve, symbol, Eq
-
-
+# ----- CLASS ----- #
 class Case:
+    """
+    This class represents a single test case for both even n or odd.
+    It includes the algorithms which solves both cases.
+    """
+    EMPTY_SEATS = 0
+    HUNTERS = 1
+
     NO_SOLVE = -1
 
     def __init__(self, n, b, h, boxes_coords, hunters_coords):
@@ -31,8 +37,10 @@ class Case:
         """
         # part_a -> quarter A data -> num of empty cells, num of hunters]
         part_a, part_b, part_c, part_d = self._split_even_size_board()
-        ext_a, ext_c = solve_equation(part_a[0], part_c[0], part_c[1] - part_a[1])
-        ext_d, ext_b = solve_equation(part_d[0], part_b[0], part_b[1] - part_d[1])
+        ext_a, ext_c = solve_equation(part_a[self.EMPTY_SEATS], part_c[self.EMPTY_SEATS],
+                                      part_c[self.HUNTERS] - part_a[self.HUNTERS])
+        ext_d, ext_b = solve_equation(part_d[self.EMPTY_SEATS], part_b[self.EMPTY_SEATS],
+                                      part_b[self.HUNTERS] - part_d[self.HUNTERS])
 
         all_additions = [ext_a, ext_b, ext_c, ext_d]
 
@@ -48,16 +56,20 @@ class Case:
         - elaboration about this method is in the readme.
         :return: the number of hunters can be added to the board but it is still stable.
         """
-        # part_a -> quarter A data -> num of empty cells, num of hunters]
+        # part_a -> quarter A data -> [num of empty cells, num of hunters]
         part_a, part_b, part_c, part_d, part_e, part_f, part_g, part_h, center = self._split_odd_size_board()
-        ext_a, ext_c = solve_equation(part_a[0], part_c[0], part_c[1] - part_a[1])
-        ext_d, ext_b = solve_equation(part_d[0], part_b[0], part_b[1] - part_d[1])
-        ext_e, ext_g = solve_equation(part_e[0], part_g[0], part_g[1] - part_e[1])
-        ext_h, ext_f = solve_equation(part_h[0], part_f[0], part_f[1] - part_h[1])
+        ext_a, ext_c = solve_equation(part_a[self.EMPTY_SEATS], part_c[self.EMPTY_SEATS],
+                                      part_c[self.HUNTERS] - part_a[self.HUNTERS])
+        ext_d, ext_b = solve_equation(part_d[self.EMPTY_SEATS], part_b[self.EMPTY_SEATS],
+                                      part_b[self.HUNTERS] - part_d[self.HUNTERS])
+        ext_e, ext_g = solve_equation(part_e[self.EMPTY_SEATS], part_g[self.EMPTY_SEATS],
+                                      part_g[self.HUNTERS] - part_e[self.HUNTERS])
+        ext_h, ext_f = solve_equation(part_h[self.EMPTY_SEATS], part_f[self.EMPTY_SEATS],
+                                      part_f[self.HUNTERS] - part_h[self.HUNTERS])
 
         all_additions = [ext_a, ext_b, ext_c, ext_d, ext_e, ext_g, ext_h, ext_f]
 
-        if center[0] == 1:
+        if center[self.EMPTY_SEATS] == 1:
             # add another one to the center
             all_additions.append(1)
 
