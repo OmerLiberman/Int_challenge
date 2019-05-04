@@ -48,13 +48,18 @@ class Case:
         :return: the number of hunters can be added to the board but it is still stable.
         """
         # part_a -> quarter A data -> num of empty cells, num of hunters]
-        part_a, part_b, part_c, part_d, part_e, part_f, part_g, part_h = self._split_odd_size_board()
+        part_a, part_b, part_c, part_d, part_e, part_f, part_g, part_h, center = self._split_odd_size_board()
         ext_a, ext_c = solve_equation(part_a[0], part_d[0], part_d[1] - part_a[1])
         ext_d, ext_b = solve_equation(part_c[0], part_b[0], part_b[1] - part_c[1])
         ext_e, ext_g = solve_equation(part_e[0], part_g[0], part_g[1] - part_e[1])
         ext_h, ext_f = solve_equation(part_h[0], part_f[0], part_f[1] - part_h[1])
 
         all_additions = [ext_a, ext_b, ext_c, ext_d, ext_e, ext_g, ext_h, ext_f]
+
+        if center[0] == 1:
+            # add another one to the center
+            all_additions.append(1)
+
         if all(i >= 0 for i in all_additions):
             return sum(all_additions)
         else:
@@ -101,8 +106,9 @@ class Case:
         part_f = seats_long - self.board.boxes[5] - self.board.hunters[5], self.board.hunters[5]
         part_g = seats_long - self.board.boxes[6] - self.board.hunters[6], self.board.hunters[6]
         part_h = seats_long - self.board.boxes[7] - self.board.hunters[7], self.board.hunters[7]
+        center = 1 - self.board.boxes[8] - self.board.hunters[8], self.board.hunters[8]
 
-        return part_a, part_b, part_c, part_d, part_e, part_f, part_g, part_h
+        return part_a, part_b, part_c, part_d, part_e, part_f, part_g, part_h, center
 
 
 def solve_equation(first_unknown_limit, second_unknown_limit, result):

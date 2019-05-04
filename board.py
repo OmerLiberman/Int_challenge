@@ -97,9 +97,10 @@ class Board:
         boxes_c, hunters_c, boxes_d, hunters_d = 0, 0, 0, 0
         boxes_e, hunters_e, boxes_f, hunters_f = 0, 0, 0, 0
         boxes_g, hunters_g, boxes_h, hunters_h = 0, 0, 0, 0
+        boxes_center, hunters_center = 0, 0
 
         for box in array_of_boxes_placed_coords:
-            part_box_belongs_to = self._part_of_even_size_board_which_coords_in(box)
+            part_box_belongs_to = self._part_of_odd_size_board_which_coords_in(box)
             if part_box_belongs_to == 'a':
                 boxes_a += 1
             if part_box_belongs_to == 'b':
@@ -116,33 +117,33 @@ class Board:
                 boxes_g += 1
             if part_box_belongs_to == 'h':
                 boxes_h += 1
-            else:
-                continue
+            if part_box_belongs_to == 'i':
+                boxes_center += 1
 
         for hunter in array_of_hunters_placed_coords:
-            part_box_belongs_to = self._part_of_even_size_board_which_coords_in(hunter)
-            if part_box_belongs_to == 'a':
+            part_hunter_belongs_to = self._part_of_odd_size_board_which_coords_in(hunter)
+            if part_hunter_belongs_to == 'a':
                 hunters_a += 1
-            if part_box_belongs_to == 'b':
+            if part_hunter_belongs_to == 'b':
                 hunters_b += 1
-            if part_box_belongs_to == 'c':
+            if part_hunter_belongs_to == 'c':
                 hunters_c += 1
-            if part_box_belongs_to == 'd':
+            if part_hunter_belongs_to == 'd':
                 hunters_d += 1
-            if part_box_belongs_to == 'e':
+            if part_hunter_belongs_to == 'e':
                 hunters_e += 1
-            if part_box_belongs_to == 'f':
+            if part_hunter_belongs_to == 'f':
                 hunters_f += 1
-            if part_box_belongs_to == 'g':
+            if part_hunter_belongs_to == 'g':
                 hunters_g += 1
-            if part_box_belongs_to == 'h':
+            if part_hunter_belongs_to == 'h':
                 hunters_h += 1
-            else:
-                continue
+            if part_hunter_belongs_to == 'i':
+                hunters_center += 1
 
-        self.boxes = [boxes_a, boxes_b, boxes_c, boxes_d, boxes_e, boxes_f, boxes_g, boxes_h]
-        self.hunters = [hunters_a, hunters_b, hunters_c, hunters_d, hunters_e, hunters_f, hunters_g,
-                        hunters_h]
+        self.boxes = [boxes_a, boxes_b, boxes_c, boxes_d, boxes_e, boxes_f, boxes_g, boxes_h, boxes_center]
+        self.hunters = [hunters_a, hunters_b, hunters_c, hunters_d, hunters_e, hunters_f, hunters_g, hunters_h,
+                        hunters_center]
 
     def _part_of_odd_size_board_which_coords_in(self, coords):
         """
@@ -158,20 +159,20 @@ class Board:
             if x < mid:
                 return 'd'
             if x == mid:
-                return 'h'
+                return 'g'
             else:  # x > mid
-                return 'a'
+                return 'c'
         if y > mid:
             if x < mid:
-                return 'c'
+                return 'a'
             if x == mid:
-                return 'f'
+                return 'e'
             else:  # x > mid
                 return 'b'
         else:  # y = mid
             if x < mid:
-                return 'g'
+                return 'h'
             if x > mid:
-                return 'e'
+                return 'f'
             else:  # x = mid
                 return 'i'
