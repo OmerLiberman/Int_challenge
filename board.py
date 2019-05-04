@@ -46,18 +46,18 @@ class Board:
                 boxes_b += 1
             if part_box_belongs_to == 'c':
                 boxes_c += 1
-            if part_box_belongs_to == 'd':  # == 'd'
+            if part_box_belongs_to == 'd':
                 boxes_d += 1
 
         for hunter in array_of_hunters_placed_coords:
-            part_box_belongs_to = self._part_of_even_size_board_which_coords_in(hunter)
-            if part_box_belongs_to == 'a':
+            part_hunter_belongs_to = self._part_of_even_size_board_which_coords_in(hunter)
+            if part_hunter_belongs_to == 'a':
                 hunters_a += 1
-            if part_box_belongs_to == 'b':
+            if part_hunter_belongs_to == 'b':
                 hunters_b += 1
-            if part_box_belongs_to == 'c':
+            if part_hunter_belongs_to == 'c':
                 hunters_c += 1
-            if part_box_belongs_to == 'd':  # == 'd'
+            if part_hunter_belongs_to == 'd':
                 hunters_d += 1
 
         self.boxes = [boxes_a, boxes_b, boxes_c, boxes_d]
@@ -77,7 +77,7 @@ class Board:
                 return 'd'
             else:  # x > mid
                 return 'c'
-        else:  # y > mid
+        if y > mid:
             if x <= mid:
                 return 'a'
             else:  # x > mid

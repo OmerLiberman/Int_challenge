@@ -31,14 +31,15 @@ class Case:
         """
         # part_a -> quarter A data -> num of empty cells, num of hunters]
         part_a, part_b, part_c, part_d = self._split_even_size_board()
-        ext_a, ext_c = solve_equation(part_a[0], part_d[0], part_d[1] - part_a[1])
-        ext_d, ext_b = solve_equation(part_c[0], part_b[0], part_b[1] - part_c[1])
+        ext_a, ext_c = solve_equation(part_a[0], part_c[0], part_c[1] - part_a[1])
+        ext_d, ext_b = solve_equation(part_d[0], part_b[0], part_b[1] - part_d[1])
 
         all_additions = [ext_a, ext_b, ext_c, ext_d]
-        for add in all_additions:
-            if add < 0:
-                return self.NO_SOLVE
-        return sum(all_additions)
+
+        if all(i >= 0 for i in all_additions):
+            return sum(all_additions)
+        else:
+            return self.NO_SOLVE
 
     def _solve_odd_size_board(self):
         """
@@ -49,8 +50,8 @@ class Case:
         """
         # part_a -> quarter A data -> num of empty cells, num of hunters]
         part_a, part_b, part_c, part_d, part_e, part_f, part_g, part_h, center = self._split_odd_size_board()
-        ext_a, ext_c = solve_equation(part_a[0], part_d[0], part_d[1] - part_a[1])
-        ext_d, ext_b = solve_equation(part_c[0], part_b[0], part_b[1] - part_c[1])
+        ext_a, ext_c = solve_equation(part_a[0], part_c[0], part_c[1] - part_a[1])
+        ext_d, ext_b = solve_equation(part_d[0], part_b[0], part_b[1] - part_d[1])
         ext_e, ext_g = solve_equation(part_e[0], part_g[0], part_g[1] - part_e[1])
         ext_h, ext_f = solve_equation(part_h[0], part_f[0], part_f[1] - part_h[1])
 

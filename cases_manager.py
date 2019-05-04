@@ -12,7 +12,6 @@ class CasesManager:
         hunters_coordinates = coordinates_array[b:]
         new_case = Case(n, b, h, boxes_coordinates, hunters_coordinates)
         self.cases.append(new_case)
-        return 0
 
     def _convert_coordinates_lines_to_tuples(self, lines):
         array_of_tuples = []
